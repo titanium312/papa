@@ -19,4 +19,7 @@
   "devDependencies": {
     "javascript-obfuscator": "^4.1.1"
   }
+},
+"scripts": {
+  "start": "node server.js"
 }
