@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Posiciones - Campeonato</title>
+
+  <!-- Estilos para Equipos Femeninos -->
+  <link id="estiloMujeres" rel="stylesheet" href="json/cs/mujer.css" disabled>
+
+  <!-- Estilos para Equipos Masculinos -->
+  <link id="estiloHombres" rel="stylesheet" href="json/cs/hombre.css" disabled>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .tabla {
+      margin: 20px auto;
+      width: 80%;
+      border-collapse: collapse;
+    }
+    .tabla th, .tabla td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    .tabla th {
+      background-color: #f2f2f2;
+    }
+    .equipo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .equipo img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+    h1, h2 {
+      color: #333;
+    }
+
+    /* Estilo para que el título de la tabla aparezca como una sola frase */
+    .titulo {
+      display: inline;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Título combinado "Tabla de Posiciones - Campeonato de Fútbol" -->
+  <div class="container">
+    <div class="header">
+      <h1><span class="titulo" id="tablaTitulo" onclick="incrementarClics()"></span>Tabla de Posiciones - Campeonato de Fútbol</h1>
+    </div>
+
+    <!-- Botones para mostrar equipos masculinos o femeninos -->
+    <div id="botonesAccion">
+      <button onclick="mostrarEquipos('mujeres')">Equipos Femeninos</button>
+      <button onclick="mostrarEquipos('hombres')">Equipos Masculinos</button>
+    </div>
+
+    <!-- Título que cambiará según la categoría -->
+    <h2 id="categoriaTitulo"></h2>
+
+    <!-- Tabla donde se mostrarán los equipos -->
+    <div class="tabla-container">
+      <table id="tablaEquipos" class="tabla">
+        <thead>
+          <tr>
+            <th>Posición</th>
+            <th>Equipo</th>
+            <th>Ganados</th>
+            <th>Empatados</th>
+            <th>Perdidos</th>
+            <th>Goles a favor</th>
+            <th>Goles en contra</th>
+            <th>Diferencia de goles</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los equipos se cargarán aquí -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Cargar el script de JS -->
+  <script>
+    let clics = 0;
+
+    // Función para incrementar clics en el título "Tabla"
+    function incrementarClics() {
+      clics++;
+      if (clics >= 3) {
+        // Mostrar los botones de acción después de 3 clics
+        document.getElementById("botonesAccion").style.display = 'block';
+      }
+    }
+
+    // Función para cambiar el estilo de la página
+    function cambiarEstilo(tipo) {
+      const estiloMujeres = document.getElementById('estiloMujeres');
+      const estiloHombres = document.getElementById('estiloHombres');
+
+      if (tipo === 'mujeres') {
+        // Activar estilo de mujeres y desactivar el de hombres
+        estiloMujeres.disabled = false;
+        estiloHombres.disabled = true;
+      } else if (tipo === 'hombres') {
+        // Activar estilo de hombres y desactivar el de mujeres
+        estiloMujeres.disabled = true;
+        estiloHombres.disabled = false;
+      }
+    }
+
+    // Función para mostrar los equipos según el tipo (mujeres o hombres)
+    async function mostrarEquipos(tipo) {
+      // Cambiar el estilo
+      cambiarEstilo(tipo);
+
+      // Cambiar el título de la categoría
+      document.getElementById("categoriaTitulo").textContent = tipo === 'mujeres' ? 'Equipos Femeninos' : 'Equipos Masculinos';
+
+      const tablaBody = document.querySelector('#tablaEquipos tbody');
+      tablaBody.innerHTML = ''; // Limpiar la tabla antes de cargar nuevos datos
+
+      try {
+        const respuesta = await fetch(`http://localhost:3000/equipos/${tipo}`);
+        const equipos = await respuesta.json();
+
+        if (equipos.length === 0) {
+          tablaBody.innerHTML = '<tr><td colspan="9">No se encontraron equipos para esta categoría.</td></tr>';
+          return;
+        }
+
+        // Actualizar los valores de la diferencia de goles y los puntos
+        equipos.forEach(equipo => {
+          equipo.diferenciaGoles = equipo.golesAFavor - equipo.golesEnContra;
+          equipo.puntos = equipo.ganados * 3 + equipo.empatados; // 3 puntos por victoria, 1 por empate
+        });
+
+        // Ordenar los equipos
+        equipos.sort((a, b) => {
+          // Ordenar primero por puntos (mayor a menor)
+          if (b.puntos !== a.puntos) return b.puntos - a.puntos;
+          
+          // Si los puntos son iguales, ordenar por diferencia de goles (mayor a menor)
+          if (b.diferenciaGoles !== a.diferenciaGoles) return b.diferenciaGoles - a.diferenciaGoles;
+          
+          // Si la diferencia de goles es igual, ordenar por goles a favor (mayor a menor)
+          if (b.golesAFavor !== a.golesAFavor) return b.golesAFavor - a.golesAFavor;
+
+          // Si todo es igual, ordenar alfabéticamente por nombre del equipo
+          return a.nombre.localeCompare(b.nombre);
+        });
+
+        // Insertar los equipos ordenados en la tabla
+        equipos.forEach((equipo, index) => {
+          const fila = document.createElement('tr');
+
+          const celdaPosicion = document.createElement('td');
+          celdaPosicion.textContent = index + 1;
+          fila.appendChild(celdaPosicion);
+
+          const celdaEquipo = document.createElement('td');
+          celdaEquipo.classList.add('equipo');
+          celdaEquipo.innerHTML = `<img src="http://localhost:3000/${equipo.escudo}" alt="${equipo.nombre}"> ${equipo.nombre}`;
+          fila.appendChild(celdaEquipo);
+
+          // Mostrar los datos sin permitir editarlos
+          const celdas = ['ganados', 'empatados', 'perdidos', 'golesAFavor', 'golesEnContra', 'diferenciaGoles', 'puntos'];
+          celdas.forEach(celda => {
+            const td = document.createElement('td');
+            td.textContent = equipo[celda];
+            fila.appendChild(td);
+          });
+
+          tablaBody.appendChild(fila);
+        });
+      } catch (error) {
+        console.error('Error al cargar los equipos:', error);
+        tablaBody.innerHTML = '<tr><td colspan="9">No se pudieron cargar los equipos. Intenta nuevamente.</td></tr>';
+      }
+    }
+
+    // Mostrar los equipos femeninos al cargar la página
+    window.onload = () => mostrarEquipos('mujeres');
+  </script>
+</body>
+</html>

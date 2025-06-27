@@ -1,0 +1,62 @@
+[
+  {
+    "nombre": "GLADIADORAS",
+    "escudo": "ImgMujer/gladiadora.png",
+    "ganados": 3,
+    "empatados": 2,
+    "perdidos": 3,
+    "golesAFavor": 0,
+    "golesEnContra": 2,
+    "tipo": "mujeres",
+    "diferenciaGoles": -2,
+    "puntos": 11
+  },
+  {
+    "nombre": "INDOMABLE",
+    "escudo": "ImgMujer/indomable.png",
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "golesAFavor": 0,
+    "golesEnContra": 0
+  },
+  {
+    "nombre": "UNION FEMENINA",
+    "escudo": "ImgMujer/mecanicas.png",
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "golesAFavor": 0,
+    "golesEnContra": 0
+  },
+  {
+    "nombre": "FURIA FEMENINA",
+    "escudo": "ImgMujer/furia.png",
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "golesAFavor": 0,
+    "golesEnContra": 0
+  },
+  {
+    "nombre": "OJIN",
+    "escudo": "ImgMujer/ojin.png",
+    "ganados": 0,
+    "empatados": 0,
+    "perdidos": 0,
+    "golesAFavor": 0,
+    "golesEnContra": 0
+  },
+  {
+    "nombre": "20 DE JULIO",
+    "escudo": "ImgMujer/20dejulio.png",
+    "ganados": 1,
+    "empatados": 1,
+    "perdidos": 1,
+    "golesAFavor": 10,
+    "golesEnContra": 3,
+    "tipo": "mujeres",
+    "diferenciaGoles": 7,
+    "puntos": 4
+  }
+]

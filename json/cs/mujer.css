@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY - Fondo y Estilo Base */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffeef8 0%, #fce4ec 30%, #f8bbd9 70%, #f48fb1 100%);
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Decoración de fondo con flores y corazones */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 120%;
+    height: 120%;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(255, 192, 203, 0.15) 3px, transparent 3px),
+        radial-gradient(circle at 85% 75%, rgba(255, 182, 193, 0.15) 2px, transparent 2px),
+        radial-gradient(circle at 45% 60%, rgba(255, 105, 180, 0.1) 1px, transparent 1px);
+    background-size: 80px 80px, 120px 120px, 60px 60px;
+    z-index: -2;
+    animation: floatFlowers 25s linear infinite;
+}
+
+body::after {
+    content: '🌸 💕 🌺 ✨ 🦋 💖 🌸 💕 🌺 ✨ 🦋 💖';
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 24px;
+    opacity: 0.1;
+    z-index: -1;
+    animation: slideDecoration 30s linear infinite;
+}
+
+/* Animaciones */
+@keyframes floatFlowers {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-10px, -10px) rotate(90deg); }
+    50% { transform: translate(10px, -5px) rotate(180deg); }
+    75% { transform: translate(-5px, 10px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes slideDecoration {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(244, 143, 177, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 192, 203, 0.3);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #e91e63, #f06292, #ff69b4, #ffb6c1);
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '👑';
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.15;
+    top: -30px;
+    left: -30px;
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+.header::after {
+    content: '⚽';
+    position: absolute;
+    font-size: 90px;
+    opacity: 0.15;
+    top: -20px;
+    right: -20px;
+    animation: rotateBall 8s linear infinite;
+    filter: hue-rotate(300deg);
+}
+
+/* Animaciones del header */
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.15; }
+    50% { transform: scale(1.1) rotate(10deg); opacity: 0.25; }
+}
+
+@keyframes rotateBall {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tipografía */
+h1 {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Botones y Acciones */
+#botonesAccion {
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(90deg, #fdf2f8, #fce7f3, #fdf2f8);
+}
+
+button {
+    background: linear-gradient(135deg, #e91e63, #f06292);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    margin: 0 15px 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(233, 30, 99, 0.4);
+    background: linear-gradient(135deg, #d81b60, #e91e63);
+}
+
+button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* Títulos de Categorías */
+#categoriaTitulo {
+    text-align: center;
+    padding: 25px;
+    font-size: 1.8rem;
+    color: #e91e63;
+    font-weight: 600;
+    background: linear-gradient(90deg, transparent, rgba(233, 30, 99, 0.1), transparent);
+    text-shadow: 1px 1px 3px rgba(233, 30, 99, 0.3);
+}
+
+/* Tabla */
+.tabla-container {
+    padding: 30px;
+    overflow-x: auto;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.2);
+    background: white;
+    border: 3px solid rgba(244, 143, 177, 0.3);
+}
+
+.tabla th {
+    background: linear-gradient(135deg, #e91e63, #f06292, #ff69b4);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.tabla th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+}
+
+.tabla td {
+    padding: 18px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(244, 143, 177, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+.tabla tbody tr {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(90deg, #ffffff, #fefefe);
+}
+
+.tabla tbody tr:hover {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd9, #fce4ec);
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.2);
+    border-radius: 10px;
+}
+
+.tabla tbody tr:nth-child(even) {
+    background: linear-gradient(90deg, #fefefe, #fdf2f8);
+}
+
+.tabla tbody tr:nth-child(even):hover {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd9, #fce4ec);
+}
+
+/* Posiciones destacadas */
+.tabla tbody tr:nth-child(1) td:first-child {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #d4af37;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.tabla tbody tr:nth-child(2) td:first-child {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+    color: #999;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+}
+
+.tabla tbody tr:nth-child(3) td:first-child {
+    background: linear-gradient(135deg, #cd7f32, #daa520);
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);
+}
+
+/* Botones dentro de la tabla */
+.tabla button {
+    background: linear-gradient(135deg, #f06292, #ff69b4);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 12px;
+    margin: 0;
+    box-shadow: 0 4px 15px rgba(240, 98, 146, 0.3);
+    font-weight: 500;
+}
+
+.tabla button:hover {
+    background: linear-gradient(135deg, #ec407a, #f06292);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(240, 98, 146, 0.4);
+}
+
+/* Efectos de carga */
+.loading-effect {
+    background: linear-gradient(90deg, transparent, rgba(255, 192, 203, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 15px 25px;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    #categoriaTitulo {
+        font-size: 1.4rem;
+    }
+}
