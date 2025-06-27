@@ -1,9 +1,10 @@
-{
+{{
   "name": "futbol-tabla",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,4 @@
   "devDependencies": {
     "javascript-obfuscator": "^4.1.1"
   }
-},
-"scripts": {
-  "start": "node server.js"
 }
