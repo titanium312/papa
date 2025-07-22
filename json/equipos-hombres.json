@@ -3,10 +3,10 @@
   { "nombre": "LOS CHAR", "escudo": "ImgHombre/CHAR.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
   { "nombre": "LOS TIRA PIEDRA", "escudo": "ImgHombre/piedra.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
   { "nombre": "DELICIA", "escudo": "ImgHombre/DELICIAS.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
-  { "nombre": "BONANZA", "escudo": "ImgHombre/BONANZA.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
+  { "nombre": "OJIN", "escudo": "ImgHombre/OJIN.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
   { "nombre": "ESTRELLA", "escudo": "ImgHombre/ESTRELLA.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
-  { "nombre": "VILLA MARY", "escudo": "ImgHombre/VILLA MARY.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
+  { "nombre": "20 JULIO", "escudo": "ImgHombre/20_julio.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
   { "nombre": "IMBACION", "escudo": "ImgHombre/IMBACION.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
-  { "nombre": "MINEROS", "escudo": "ImgHombre/INURBE.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
+  { "nombre": "MINEROS", "escudo": "ImgHombre/MINERO.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 },
   { "nombre": "7 AGOSTO", "escudo": "ImgHombre/7agosto.png", "ganados": 0, "empatados": 0, "perdidos": 0, "golesAFavor": 0, "golesEnContra": 0 }
 ]

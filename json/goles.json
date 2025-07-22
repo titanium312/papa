@@ -1,0 +1,19 @@
+{
+  "goleadoresHombres": [
+    {
+      "jugador": "MAURO",
+      "equipo": "LOS CAPOS",
+      "goles": 80,
+      "escudo": "/ImgHombre/CHAR.png",
+      "posicion": 1
+    }
+  ],
+  "goleadorasMujeres": [
+    {
+      "posicion": 1,
+      "jugador": "Alex Morgan",
+      "equipo": "Orlando Pride",
+      "goles": 0
+    }
+  ]
+}

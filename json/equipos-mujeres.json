@@ -1,62 +1,74 @@
 [
   {
-    "nombre": "GLADIADORAS",
-    "escudo": "ImgMujer/gladiadora.png",
-    "ganados": 3,
-    "empatados": 2,
-    "perdidos": 3,
-    "golesAFavor": 0,
-    "golesEnContra": 2,
-    "tipo": "mujeres",
-    "diferenciaGoles": -2,
-    "puntos": 11
-  },
-  {
-    "nombre": "INDOMABLE",
-    "escudo": "ImgMujer/indomable.png",
-    "ganados": 0,
-    "empatados": 0,
-    "perdidos": 0,
-    "golesAFavor": 0,
-    "golesEnContra": 0
-  },
-  {
     "nombre": "UNION FEMENINA",
     "escudo": "ImgMujer/mecanicas.png",
-    "ganados": 0,
+    "ganados": 6,
     "empatados": 0,
     "perdidos": 0,
-    "golesAFavor": 0,
-    "golesEnContra": 0
+    "golesAFavor": 25,
+    "golesEnContra": 6,
+    "tipo": "mujeres",
+    "diferenciaGoles": 19,
+    "puntos": 18
+  },
+  {
+    "nombre": "20 DE JULIO",
+    "escudo": "ImgMujer/20dejulio.png",
+    "ganados": 3,
+    "empatados": 1,
+    "perdidos": 2,
+    "golesAFavor": 8,
+    "golesEnContra": 8,
+    "tipo": "mujeres",
+    "diferenciaGoles": 0,
+    "puntos": 10
   },
   {
     "nombre": "FURIA FEMENINA",
     "escudo": "ImgMujer/furia.png",
-    "ganados": 0,
-    "empatados": 0,
-    "perdidos": 0,
-    "golesAFavor": 0,
-    "golesEnContra": 0
+    "ganados": 2,
+    "empatados": 2,
+    "perdidos": 2,
+    "golesAFavor": 7,
+    "golesEnContra": 12,
+    "tipo": "mujeres",
+    "diferenciaGoles": -5,
+    "puntos": 8
+  },
+  {
+    "nombre": "INDOMABLE",
+    "escudo": "ImgMujer/indomable.png",
+    "ganados": 2,
+    "empatados": 1,
+    "perdidos": 3,
+    "golesAFavor": 7,
+    "golesEnContra": 9,
+    "tipo": "mujeres",
+    "diferenciaGoles": -2,
+    "puntos": 7
+  },
+  {
+    "nombre": "GLADIADORAS",
+    "escudo": "ImgMujer/gladiadora.png",
+    "ganados": 1,
+    "empatados": 3,
+    "perdidos": 2,
+    "golesAFavor": 7,
+    "golesEnContra": 7,
+    "tipo": "mujeres",
+    "diferenciaGoles": 0,
+    "puntos": 6
   },
   {
     "nombre": "OJIN",
     "escudo": "ImgMujer/ojin.png",
     "ganados": 0,
-    "empatados": 0,
-    "perdidos": 0,
-    "golesAFavor": 0,
-    "golesEnContra": 0
-  },
-  {
-    "nombre": "20 DE JULIO",
-    "escudo": "ImgMujer/20dejulio.png",
-    "ganados": 1,
     "empatados": 1,
-    "perdidos": 1,
-    "golesAFavor": 10,
-    "golesEnContra": 3,
+    "perdidos": 5,
+    "golesAFavor": 2,
+    "golesEnContra": 12,
     "tipo": "mujeres",
-    "diferenciaGoles": 7,
-    "puntos": 4
+    "diferenciaGoles": -10,
+    "puntos": 1
   }
 ]
